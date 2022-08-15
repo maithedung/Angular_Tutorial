@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="httpCtrl">
+  <ul>
+    <li ng-repeat="x in myData">
+      {{ x.Name + ', ' + x.Country }}
+    </li>
+  </ul>
+
+  <p>Status : {{statuscode}}</p>
+  <p>StatusText : {{statustext}}</p>
+
+  <p>The response object has many properties. This example demonstrate the value of the data, status, and statusText properties.</p>
+
+</div>
+<script src="httpController.js"></script>
+</body>
+</html>

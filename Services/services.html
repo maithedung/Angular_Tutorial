@@ -36,6 +36,14 @@
   <p>A custom service with a method that converts a given number into a hexadecimal number.</p>
 </div>
 
+<div ng-controller="countsCtrl">
+  <p>Use a filter when displaying the array [255, 251, 200]:</p>
+  <ul>
+    <li ng-repeat="x in counts">{{x | myFormat}}</li>
+  </ul>
+  <p>This filter uses a service that converts numbers into hexadecimal values.</p>
+</div>
+
 <script src="servicesController.js"></script>
 </body>
 </html>

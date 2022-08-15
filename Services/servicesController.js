@@ -34,3 +34,13 @@ app.controller('hexafyCtrl', function($scope, hexafy) {
     $scope.hexNumber = 252;
     $scope.hex = hexafy.myFunc($scope.hexNumber);
 });
+
+app.filter('myFormat',['hexafy', function(hexafy) {
+    return function(x) {
+        return hexafy.myFunc(x);
+    };
+}]);
+
+app.controller('countsCtrl', function($scope) {
+    $scope.counts = [255, 251, 200];
+});
