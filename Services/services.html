@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="locationCtrl">
+  <p>The url of this page is:</p>
+  <h1>{{myUrl}}</h1>
+  <p>This example uses the built-in $location service to get the absolute url of the page.</p>
+</div>
+
+<div ng-controller="httpCtrl">
+  <p>Today's welcome message is:</p>
+  <h1>{{myWelcome}}</h1>
+  <p>The $http service requests a page on the server, and the response is set as the value of the "myWelcome" variable.</p>
+</div>
+
+<div ng-controller="timeoutCtrl">
+  <p>This header will change after two seconds:</p>
+  <h1>{{myHeader}}</h1>
+  <p>The $timeout service runs a function after a specified number of milliseconds.</p>
+</div>
+
+<div ng-controller="intervalCtrl">
+  <p>The time is:</p>
+  <h1>{{theTime}}</h1>
+  <p>The $interval service runs a function every specified millisecond.</p>
+</div>
+
+<div ng-controller="hexafyCtrl">
+  <p>The hexadecimal value of {{hexNumber}} is:</p>
+  <h1>{{hex}}</h1>
+  <p>A custom service with a method that converts a given number into a hexadecimal number.</p>
+</div>
+
+<script src="servicesController.js"></script>
+</body>
+</html>
