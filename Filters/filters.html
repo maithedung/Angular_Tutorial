@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="personCtrl">
+    <p>The name is {{ lastName | uppercase }}</p>
+
+    <p>The name is {{ lastName | lowercase }}</p>
+
+    <ul>
+        <li ng-repeat="x in names | orderBy:'country'">
+            {{ x.name + ', ' + x.country }}
+        </li>
+    </ul>
+
+    <h1>Price: {{ price | currency }}</h1>
+
+    <ul>
+        <li ng-repeat="x in fullnames | filter : 'i'">
+            {{ x }}
+        </li>
+    </ul>
+
+    <p><input type="text" ng-model="test"></p>
+    <ul>
+        <li ng-repeat="x in fullnames | filter : test">
+            {{ x }}
+        </li>
+    </ul>
+
+    <table border="1" width="100%">
+        <tr>
+            <th ng-click="orderByMe('name')">Name</th>
+            <th ng-click="orderByMe('country')">Country</th>
+        </tr>
+        <tr ng-repeat="x in names | orderBy:myOrderBy">
+            <td>{{x.name}}</td>
+            <td>{{x.country}}</td>
+        </tr>
+    </table>
+
+    <ul>
+        <li ng-repeat="x in fullnames">
+            {{x | myFormat}}
+        </li>
+    </ul>
+</div>
+
+<script src="personController.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl" ng-init="firstName='John'">
+    <div>
+        <p>The first name is <span ng-bind="firstName"></span></p>
+    </div>
+
+    <div ng-init="lastName='Mike'">
+        <p>The last name is <span ng-bind="lastName"></span></p>
+    </div>
+
+    <div>
+        <p>Name: <input type="text" ng-model="name"></p>
+        <p ng-bind="name"></p>
+    </div>
+
+    <div>
+        <p>My first expression: {{ 5 + 5 }}</p>
+    </div>
+
+    <div>
+        <p>Name: <input type="text" ng-model="name"></p>
+        <p>{{name}}</p>
+    </div>
+
+    <div>
+        First Name: <input type="text" ng-model="firstNames"><br>
+        Last Name: <input type="text" ng-model="lastNames"><br>
+        <br>
+        Full Name: {{firstNames + " " + lastNames}}
+    </div>
+
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.firstNames= "John";
+        $scope.lastNames= "Doe";
+    });
+</script>
+
+</body>
+</html>
